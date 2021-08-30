@@ -1,13 +1,18 @@
+const path = require('path')
+const mysql = require('mysql');
+
 module.exports = {
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 8081,
   db: {
-    database: process.env.DB_NAME || 'tabtracker',
-    user: process.env.DB_USER || 'tabtracker',
-    password: process.env.DB_PASS || 'tabtracker',
+    database: process.env.DB_NAME || 'finalproject',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASS || '',
     options: {
-      dialect: process.env.DIALECT || 'sqlite',
+      dialect: process.env.DIALECT || 'mysql',
       host: process.env.HOST || 'localhost',
-      storage: './tabtracker.sqlite'
     }
-  }
+  },
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
+  },
 }

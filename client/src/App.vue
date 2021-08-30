@@ -1,10 +1,11 @@
 <template>
-  <div id="app" data-app app-data="true" light>
+  <div id="app">
     <v-app>
+      <page-header />
+
       <main>
         <v-container fluid>
-          <PageHeader/>
-          <router-view/>
+          <router-view></router-view>
         </v-container>
       </main>
     </v-app>
@@ -13,8 +14,9 @@
 
 <script>
 import PageHeader from '@/components/Header.vue'
+
 export default {
-  name: 'App',
+  name: 'app',
   components: {
     PageHeader
   }
@@ -28,9 +30,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
+  margin-top: 60px;
 }
-.input-group--text-field input{
-  border-bottom: 1px solid black ;
+
+.danger-alert {
+  color: red;
 }
 </style>
